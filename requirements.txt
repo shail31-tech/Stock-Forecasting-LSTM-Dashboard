@@ -1,0 +1,10 @@
+numpy
+pandas
+scikit-learn
+yfinance
+requests
+matplotlib
+plotly
+streamlit
+python-dotenv
+tensorflow-macos
