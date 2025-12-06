@@ -1,21 +1,19 @@
 🚀 LSTM Stock Forecasting Dashboard
 
-An interactive Streamlit dashboard that visualizes stock performance, computes technical indicators, analyzes risk metrics, and generates multi-step price forecasts using a custom-built LSTM deep learning model.
-
-This project is ideal for showcasing machine learning, time-series forecasting, data engineering, and full-stack ML app development skills.
+An interactive Streamlit dashboard that visualizes stock performance, computes technical indicators, analyzes risk metrics, and forecasts future prices using a custom-built LSTM neural network.
 
 📌 Features
-📈 1. Stock Data Fetching
+📈 Stock Data Fetching
 
-Downloads OHLC data using yfinance
+Fetches OHLC data from yfinance
 
-Dynamic ticker input (default: AAPL)
+User-defined ticker (e.g., AAPL, TSLA, MSFT)
 
 Adjustable date range
 
-📊 2. Technical Indicators
+📊 Technical Indicators
 
-Automatically computes:
+Includes plots for:
 
 Moving Averages (MA20, MA50, MA200)
 
@@ -23,13 +21,11 @@ Bollinger Bands
 
 MACD & Signal Line
 
-RSI (Wilder’s method)
+RSI (Wilder’s Method)
 
-All displayed with beautiful Streamlit line charts.
+🧮 Risk Metrics
 
-🧮 3. Risk Metrics
-
-Includes professional trading desk metrics:
+Computed directly from daily returns:
 
 Annualized Volatility
 
@@ -37,36 +33,32 @@ Sharpe Ratio
 
 Max Drawdown
 
-Daily Returns Visualization
+Daily Returns Chart
 
-🤖 4. LSTM Price Forecasting
+🤖 LSTM Forecasting
 
-A custom-built LSTM neural network predicts future stock closing prices:
+A custom LSTM neural network predicts future closing prices.
 
-✔ Multi-step forecasting
+Features:
 
-Predicts N days ahead (configurable).
+Multi-step iterative forecasting
 
-✔ Scaled training
+Automatic scaling (MinMaxScaler)
 
-Uses MinMaxScaler for improved model stability.
+Train/Test RMSE
 
-✔ Train/Test RMSE
+Two charts:
 
-Displays accuracy metrics.
+Historical + Forecast
 
-✔ 2 Plot Views
-
-Historical + Predicted
-
-Predictions-only (future values)
+Forecast-only
 
 🧠 Technologies Used
 Category	Tools
-ML / DL	TensorFlow (LSTM), NumPy, scikit-learn
-Data	pandas, yfinance
-Dashboard	Streamlit
-Visualization	Plotly / Streamlit charts
+Machine Learning	TensorFlow (LSTM), NumPy, scikit-learn
+Data Handling	pandas, yfinance
+Visualization	Streamlit, Matplotlib/Plotly
+Deployment	Streamlit
 Environment	Conda (Python 3.9)
 🗂️ Project Structure
 ├── app.py
@@ -87,43 +79,40 @@ Environment	Conda (Python 3.9)
 git clone https://github.com/USERNAME/Stock-Forecasting-LSTM-Dashboard.git
 cd Stock-Forecasting-LSTM-Dashboard
 
-2️⃣ Create a clean environment
-
-(Recommended: Python 3.9)
-
+2️⃣ Create a virtual environment
 conda create -n finance39 python=3.9
 conda activate finance39
 
 3️⃣ Install dependencies
 pip install -r requirements.txt
 
-4️⃣ Run the dashboard
+4️⃣ Run the app
 streamlit run app.py
 
 📌 Usage
 Sidebar Controls
 
-Choose ticker (e.g., AAPL, TSLA, MSFT)
+Select stock ticker
 
-Select date range
+Choose date range
 
-Enable/disable:
+Toggle:
 
 Technical indicators
 
 Risk metrics
 
-LSTM forecasting
+Forecasting
 
-Configure:
+Adjust:
 
 Forecast horizon
 
 LSTM lag window
 
-Output Includes:
+Dashboard Output
 
-Stock price chart
+Closing price chart
 
 Technical indicator charts
 
@@ -133,48 +122,42 @@ Risk metrics
 
 Forecast charts
 
+Forecast-only chart
+
 Forecast table
 
-📈 Example Output
-✔ Historical + Forecast plot
-
-Shows how the LSTM model extends the price into the future.
-
-✔ Prediction-only chart
-
-A clean forward-looking forecast view.
-
-✔ Forecast Table
-
-Displays predicted price for each future date.
-
-🎯 Model Details
+🤖 Model Details
 LSTM Architecture
 
-Input shape: (lag_window, 1)
+LSTM layer (64 units)
 
-1 LSTM layer (64 units)
+Dense output layer
 
-Dense output layer (1 unit)
-
-Adam optimizer (1e-3)
+Adam optimizer
 
 EarlyStopping callback
 
-MinMax scaling for stability
+MinMax scaling
 
 Forecasting Method
 
-Uses multi-step iterative prediction, feeding each predicted value back into the model.
+Multi-step iterative prediction
+
+Each predicted value becomes the next input
 
 🌟 Future Improvements
 
-Add GRU or Transformer-based forecasting
+Add GRU & Transformer forecasting
 
-Compare with ARIMA/Prophet
+Compare with ARIMA / Prophet
 
-Add hyperparameter tuning panel
+Add sentiment analysis using news
 
-Deploy on Streamlit Cloud
+Deploy to Streamlit Cloud
 
-Add buy/sell strategy simulation
+Add trading strategy simulations
+
+🧑‍💻 Author
+
+Shail Shah
+📌 Data Science | Machine Learning | AI
