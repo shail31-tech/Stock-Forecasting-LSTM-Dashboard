@@ -7,4 +7,4 @@ matplotlib
 plotly
 streamlit
 python-dotenv
-tensorflow-macos
+tensorflow==2.20.0
